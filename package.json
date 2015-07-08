@@ -4,7 +4,9 @@
   "description": "Experiments in Rx performance.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "browserify": "browserify lib -t babelify > public/bundle.js",
+    "benchmark": "npm run browserify && http-server ."
   },
   "repository": {
     "type": "git",
@@ -24,10 +26,12 @@
   "homepage": "https://github.com/zebulonj/rx-benchmark",
   "dependencies": {
     "benchmark": "^1.0.0",
+    "http-server": "^0.8.0",
     "lodash": "^3.10.0",
     "rx": "^2.5.3"
   },
   "devDependencies": {
+    "babel": "^5.6.14",
     "babelify": "^6.1.2",
     "browserify": "^10.2.4"
   }
